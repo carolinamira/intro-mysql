@@ -1,0 +1,37 @@
+--Exercício 6 - Banco de dados relacional
+--Carolina Mira
+
+use db_diversos;
+create table tb_varejo (
+id bigint(5) auto_increment,
+nome varchar(30),
+preco decimal(10,2) not null,
+categoria varchar(30) not null,
+cor varchar(20) not null,
+tensao varchar(3)  not null,
+estoque boolean, 
+primary key (id) );
+
+select * from tb_varejo;
+
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("luminária", 100.50, "quarto", "preto", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("celular", 3250.99, "eletrônico", "azul", "B", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("geladeira", 4000.77, "cozinha", "prata", "220", false);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("fogão", 2000.45, "cozinha", "preto", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("TV", 4500.70, "sala", "preto", "B", false);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("aquecedor", 200.65, "quarto", "branco", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("chapinha", 350.60, "eletrônico", "rosa", "B", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("secador", 500.70, "quarto", "vermelho", "220", false);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("microondas", 2000.60, "cozinha", "prata", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("batedeira", 2500.63, "cozinha", "vermelho", "220", false);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("notebook", 5642.65, "sala", "preto", "B", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("adega", 1505.78, "sala", "preto", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("sanduicheira", 300.65, "cozinha", "azul", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("liquidificador", 800.63, "cozinha", "vermelho", "220", true);
+insert into tb_varejo (nome, preco, categoria, cor, tensao, estoque) values ("airfryer", 1064.65, "cozinha", "preto", "220", true);
+
+select * from tb_varejo
+select * from tb_varejo where nome like "a%"
+select * from tb_varejo where categoria = "sala";
+select * from tb_varejo where categoria = "cozinha" and preco between 1000 and 1500;
+select * from tb_varejo where categoria like "%sala%";

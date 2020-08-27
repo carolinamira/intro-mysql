@@ -1,0 +1,36 @@
+--Exercício 5 - Banco de dados relacional
+--Carolina Mira
+
+use db_diversos;
+create table tb_petshop (
+id bigint(5) auto_increment,
+peso smallint(3) not null,
+nome varchar(30) not null,
+idade smallint(3) not null,
+genero varchar(1)  not null,
+ativo boolean,
+especie varchar(20) not null, 
+primary key (id) );
+
+select * from tb_petshop;
+
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (7, "Billy", 5, "M", true, "cachorro");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (1, "Tata", 14, "F", true, "tartaruga");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (15, "Tiger", 10, "M", true, "tigre");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (1, "Birdie", 3, "M", true, "pássaro");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (3, "Najinha", 8, "F", true, "cobra");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (50, "Bear", 6, "M", true, "urso");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (1, "Lizard", 2, "F", true, "lagarto");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (5, "Ruivo", 9, "M", true, "lobo-guará");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (4, "Mingau", 7, "M", true, "gato");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (2, "Toby", 3, "M", true, "cachorro");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (50, "Mimosa", 10, "F", true, "vaca");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (1, "Giselda", 2, "F", true, "galinha");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (16, "Aligator", 11, "M", true, "jacaré");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (20, "Pintada", 4, "F", true, "onça");
+insert into tb_petshop (peso, nome, idade, genero, ativo, especie) values (4, "Shakira", 9, "F", true, "gato");
+
+select * from tb_petshop
+select * from tb_petshop where peso > 10;
+select * from tb_petshop where peso < 10;
+select * from tb_petshop where peso between 10 and 30;

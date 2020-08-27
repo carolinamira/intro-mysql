@@ -1,0 +1,38 @@
+--Exercício 2 - Banco de dados relacional
+--Carolina Mira
+
+create database db_ecommerce;
+use db_ecommerce;
+create table tb_produtos (
+id bigint(5) auto_increment,
+nome varchar(30),
+preco decimal(10,2) not null,
+categoria varchar(30) not null,
+marca varchar(20) not null,
+tensao varchar(3)  not null,
+estoque boolean, 
+primary key (id));
+
+select * from tb_produtos
+
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("luminária", 100.50, "quarto", "Philips", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("celular", 3250.99, "eletrônico", "Samsung", "B", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("geladeira", 4000.77, "cozinha", "Eletrolux", "220", false);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("fogão", 2000.45, "cozinha", "Arno", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("TV", 4500.70, "sala", "LG", "B", false);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("aquecedor", 200.65, "quarto", "Mondial", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("chapinha", 350.60, "eletrônico", "Gama Italy", "B", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("secador", 500.70, "quarto", "Gama Italy", "220", false);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("microondas", 2000.60, "cozinha", "Eletrolux", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("batedeira", 2500.63, "cozinha", "Kitchen Aid", "220", false);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("notebook", 5642.65, "sala", "Samsung", "B", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("adega", 1505.78, "sala", "Eletrolux", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("sanduicheira", 300.65, "cozinha", "Mondial", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("liquidificador", 800.63, "cozinha", "Kitchen Aid", "220", true);
+insert into tb_produtos (nome, preco, categoria, marca, tensao, estoque) values ("airfryer", 1064.65, "cozinha", "Philips", "220", true);
+select * from tb_produtos
+select * from tb_produtos where preco > 500;
+select * from tb_produtos where preco < 500;
+
+update tb_produtos set marca = 'Philips' where id = 6;
+select * from tb_produtos;

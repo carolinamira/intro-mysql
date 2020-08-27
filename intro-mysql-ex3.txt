@@ -1,0 +1,39 @@
+--Exercício 3 - Banco de dados relacional
+--Carolina Mira
+
+create database db_escola;
+use db_escola;
+
+create table tb_escola(
+id bigint(5) auto_increment,
+idade varchar(2) not null,
+nome varchar(30) not null,
+serie varchar(20) not null,
+genero varchar(1)  not null,
+ativo boolean,
+cidade varchar(20) not null, 
+primary key (id) );
+
+select * from tb_escola
+
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("15", "João Silva", "2o ano", "M", true, "Jundiaí");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("16","Isabela Sales", "3o ano", "F", true, "São Paulo");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("12", "Roberto Henrique", "6o ano", "M", true, "Belo Horizonte");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("14", "Bento Farias", "8o ano","M", true, "Osasco");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("18", "Julio Luiz Melo","3o ano","M", true, "Itapira");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("22", "Rayssa Mariana", "Facul", "F", true, "Jundiaí");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("26", "Luiz Danilo Martin", "Facul", "M", true, "Olinda");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("28", "Daniela Vitória", "Facul", "F", true, "Itatiba");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("24", "Geraldo Cunha", "Facul", "M", true, "Itu");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("10", "Yago Enrico ", "5o ano", "M", true, "Sorocaba");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("21", "Pietro Marcos", "Facul", "M", true, "Recife");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("7", "Gabriela Cecília", "4o ano", "F", true, "Bonito");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("27", "Alexandre Felipe", "Facul", "M", true, "Curitiba");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("16", "Lara Teresinha", "1o ano", "F", true, "Salvador");
+insert into tb_escola (idade, nome, serie, genero, ativo, cidade) values ("29", "Luciano Carlos", "Facul", "M", true, "Vitória");
+select * from tb_escola
+select * from tb_escola where idade > 7;
+select * from tb_escola where idade < 7;
+
+update tb_escola set idade = '29' where id = 13;
+select * from tb_escola
