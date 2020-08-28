@@ -1,0 +1,48 @@
+-- Exercicio 7 - Banco de dados relacional
+-- Carolina Mira
+
+create database db_generation_game_online;
+use db_generation_game_online;
+create table tb_classe (
+idclasse bigint(5) auto_increment,
+nomec varchar(30),
+poder bigint (4),
+truque varchar(20), 
+primary key (idclasse) );
+
+select * from tb_classe;
+use db_generation_game_online;
+
+create table tb_personagem (
+idperso bigint(5) auto_increment,
+nomep varchar(30),
+idade smallint (3),
+cabelo varchar(20),
+olhos varchar(20),
+sabedoria smallint (3), 
+foreign key (idperso) references tb_classe (idclasse));
+
+select * from tb_personagem;
+select * from tb_classe;
+insert into tb_classe (nomec, poder, truque) values ("Feiticeira", 5000 , "encanto");
+insert into tb_classe (nomec, poder, truque) values ("Alquimista", 4000, "poção mágica");
+insert into tb_classe (nomec, poder, truque) values ("Arqueiro", 3500, "flecha");
+insert into tb_classe (nomec, poder, truque) values ("Guerreira", 3000, "espada");
+insert into tb_classe (nomec, poder, truque) values ("Cavaleiro", 1500, "bastao");
+select * from tb_classe;
+select * from tb_personagem;
+
+insert into tb_personagem (nomep, idade, cabelo, olhos, sabedoria) values ("Witch", 89, "branco", "roxo", 95);
+insert into tb_personagem (nomep, idade, cabelo, olhos, sabedoria) values ("Boticario", 65 , "verde", "preto", 80);
+insert into tb_personagem (nomep, idade, cabelo, olhos, sabedoria) values ("Legolas", 25 ,"loiro", "azul", 40);
+insert into tb_personagem (nomep, idade, cabelo, olhos, sabedoria) values ("Diana", 29 , "castanho","castanho", 60);
+insert into tb_personagem (nomep, idade, cabelo, olhos, sabedoria) values ("Arthur", 35 , "ruivo", "verde", 45);
+
+select * from tb_personagem;
+select * from tb_classe where poder > 2000;
+select * from tb_classe where poder between 1000 and 2000;
+select * from tb_personagem where nomep like "d%";
+
+select nomec, nomep, truque, idade, cabelo from tb_classe c1 inner join tb_personagem c2 on c1.idclasse = c2.idperso;
+
+select * from tb_classe where nomec = "arqueiro";

@@ -1,0 +1,47 @@
+-- Exercicio 8 - Banco de dados relacional
+-- Carolina Mira
+
+create database db_pizzaria_legal;
+use db_pizzaria_legal;
+create table tb_categoria (
+id bigint(5) auto_increment,
+nomecat varchar(30),
+qtde smallint (3),
+ativo boolean, 
+primary key (id) );
+
+select * from tb_categoria;
+
+use db_pizzaria_legal;
+create table tb_produto (
+id bigint(5) auto_increment,
+nome varchar(30),
+preco decimal (10,2),
+borda boolean,
+prod_id bigint not null, 
+primary key (id),
+foreign key (prod_id) references tb_categoria (id));
+
+select * from tb_produto;
+select * from tb_categoria;
+insert into tb_categoria (nomecat, qtde, ativo) values ("pizza salgada", 2 , true);
+insert into tb_categoria (nomecat, qtde, ativo) values ("pizza doce", 2 , true);
+insert into tb_categoria (nomecat, qtde, ativo) values ("pizza sem lactose", 2 , true);
+select * from tb_categoria;
+select * from tb_produto;
+
+insert into tb_produto (nome, preco, borda, prod_id) values ("Mussarela", 30.00, true, 1);
+insert into tb_produto (nome, preco, borda, prod_id) values ("Calabresa", 40.00, true, 1);
+insert into tb_produto (nome, preco, borda, prod_id) values ("Nutella", 60.00, false, 2);
+insert into tb_produto (nome, preco, borda, prod_id) values ("Romeu e Julieta", 65.00, false, 2);
+insert into tb_produto (nome, preco, borda, prod_id) values ("Lombo", 50.00, true, 3);
+insert into tb_produto (nome, preco, borda, prod_id) values ("Vegana", 35.00, true, 3);
+
+select * from tb_produto;
+select * from tb_produto where preco > 45.00;
+select * from tb_produto where preco between 29.00 and 60.00;
+select * from tb_produto where nome like "c%";
+
+select nomecat, nome, qtde, preco, borda from tb_categoria t1 inner join tb_produto t2 on t1.id = t2.prod_id;
+
+select * from tb_produto where prod_id = 3;
